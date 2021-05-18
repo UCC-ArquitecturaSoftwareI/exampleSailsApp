@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Sails App</title>
+</head>
+<body>
+<nav>
+    Esto es una barra de navegación
+    <% if (req.session.user) { %>
+        <%= req.session.user.name %>
+        <a href="/logout">logout</a>
+    <% }else{ %>
+        <a href="/login">login</a>
+    <% } %>
+</nav>
+<%- body %>
+</body>
+</html>
