@@ -20,8 +20,8 @@ module.exports.bootstrap = async function () {
   console.log('🔥 Vacia');
   await User.createEach([
     {
-      email: 'ry@example.com',
-      name: 'Ryan Dahl',
+      email: 'a@a.a',
+      name: 'Juan Perez',
       password: await sails.argon2.hash('1234'),
     },
     {

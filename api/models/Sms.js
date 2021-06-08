@@ -1,5 +1,5 @@
 /**
- * User.js
+ * Sms.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,20 +8,20 @@
 module.exports = {
 
   attributes: {
-    name:{
-      type: 'string',
+    sms: 'string',
+    writer: {
+      model: 'user'
     },
-    email:{
-      type: 'string',
-      required: true,
-    },
-    password:{
-      type: 'string',
-      required: true,
-    },
-    sms_liked: {
+    respuestas: {
       collection: 'sms',
-      via: 'likes'
+      via: 'padre'
+    },
+    padre: {
+      model: 'sms'
+    },
+    likes: {
+      collection: 'user',
+      via: 'sms_liked'
     },
   },
 };
